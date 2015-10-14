@@ -66,7 +66,11 @@ gem 'rails_12factor', group: :production
 
 gem 'puma'
 
-gem 'xmlstats'
+gem 'cocoon'
+gem 'bootstrap-sass'
+gem 'devise'
+gem 'simple_form'
+gem 'bootstrap3-datetimepicker-rails'
 
 # task scheduler
 gem 'whenever', :require => false
