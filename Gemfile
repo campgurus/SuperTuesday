@@ -66,6 +66,9 @@ gem 'rails_12factor', group: :production
 
 gem 'puma'
 
+#CMS panel for admin
+gem 'rails_admin'
+
 gem 'cocoon'
 gem 'bootstrap-sass'
 gem 'devise'
