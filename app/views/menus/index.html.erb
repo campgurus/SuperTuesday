@@ -3,7 +3,7 @@
 <ul>
 	<% Menu.all.each do |menu| %>
 	  <li>
-			<%= menu.date %> 
+			<%= link_to menu.date, menu_path(menu) %> 
 	  </li>
 
 	<% end %>
