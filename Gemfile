@@ -75,6 +75,10 @@ gem 'devise'
 gem 'simple_form'
 gem 'bootstrap3-datetimepicker-rails'
 
+
+# select tag jquery plugin
+gem "select2-rails"
+
 # task scheduler
 gem 'whenever', :require => false
 

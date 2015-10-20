@@ -1,5 +1,10 @@
-This is where the menus index page will be.
+<h1>List of menus:</h1>
 
-It will include menus from past days as well as the current menu.
+<ul>
+	<% Menu.all.each do |menu| %>
+	  <li>
+			<%= menu.date %> 
+	  </li>
 
-In the future, the root page will show the latest menu!
+	<% end %>
+</ul>

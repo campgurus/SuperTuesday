@@ -11,5 +11,19 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require select2
+ *= require select2-bootstrap
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap-datetimepicker";
+
+body{
+    padding-top: 50px; 
+}
+
+ul{
+	list-style: none;
+}

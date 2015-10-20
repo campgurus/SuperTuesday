@@ -1,0 +1,13 @@
+<div class="cold-md-12">
+	<fieldset class="fsStyle">				
+		<legend class="legendStyle">Subjects Information <%= image_tag('help_icon.png', data: {:toggle => 'popover', :container => 'body', :trigger => 'hover',:placement => "bottom", :title => "Subject's Information", :content => "This is where we can add some additional info"})%></legend>
+		<div>
+	    <%= f.simple_fields_for :items do |item| %>
+	      <%= render 'item_fields', :f => item %>
+	    <% end %>
+    </div>
+    <div class="links">
+      <%= link_to_add_association 'Add an Item to the Menu', f, :subjects, :class => "btn btn-warning" %>
+    </div>
+	</fieldset>
+</div>
