@@ -1,7 +1,7 @@
 <h1>Menu Items for <%= @menu.date.strftime("%B %d, %Y") %>:</h1>
 
 <ul>
-	<% @items.all.each do |item| %>
+	<% @menu.items.all.each do |item| %>
 	  <li>
 			<%= link_to item.name, item_path(item) %>
 			  $<%= item.price %>

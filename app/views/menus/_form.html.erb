@@ -1,13 +1,44 @@
-<div class="cold-md-12">
-	<fieldset class="fsStyle">				
-		<legend class="legendStyle">Subjects Information <%= image_tag('help_icon.png', data: {:toggle => 'popover', :container => 'body', :trigger => 'hover',:placement => "bottom", :title => "Subject's Information", :content => "This is where we can add some additional info"})%></legend>
-		<div>
-	    <%= f.simple_fields_for :items do |item| %>
-	      <%= render 'item_fields', :f => item %>
-	    <% end %>
+<%= simple_form_for @menu do |f| %>
+  <% if @menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+      <ul>
+      <% @menu.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
     </div>
-    <div class="links">
-      <%= link_to_add_association 'Add an Item to the Menu', f, :subjects, :class => "btn btn-warning" %>
-    </div>
-	</fieldset>
-</div>
+  <% end %>
+  
+  <div class="cold-md-12">
+		<fieldset class="fsStyle">				
+			<legend class="legendStyle">Date of Menu<%#= image_tag('help_icon.png', data: {:toggle => 'popover', :container => 'body', :trigger => 'hover',:placement => "bottom", :title => "Subject's Information", :content => "Specify a Date not already done"})%></legend>
+			<div>
+		    <%= f.input :date %> <!-- , as: :date_picker, :label => 'Date of Menu', class: "datetimepicker" %> -->
+	    </div>
+		</fieldset>
+	</div>
+
+	<div class="cold-md-12">
+		<fieldset class="fsStyle">				
+			<legend class="legendStyle">Adding Items<%#= image_tag('help_icon.png', data: {:toggle => 'popover', :container => 'body', :trigger => 'hover',:placement => "bottom", :title => "Subject's Information", :content => "This is where we can add some additional info"})%></legend>
+			<div>
+		    <%= f.simple_fields_for :items do |item| %>
+		      <%= render 'item_fields', :f => item %>
+		    <% end %>
+	    </div>
+	    <div class="links">
+	      <%= link_to_add_association 'Add an Item to the Menu', f, :items, :class => "btn btn-warning" %>
+	    </div>
+		</fieldset>
+	</div>
+
+  <br>
+	<%= f.button :submit, :class => 'btn btn-primary' %>
+
+<% end %>
+
+
+<script type="text/javascript">
+    $('.datetimepicker').datetimepicker();
+</script>
